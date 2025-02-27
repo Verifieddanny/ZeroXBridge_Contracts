@@ -44,7 +44,7 @@ pub trait IDAO<TContractState> {
 }
 
 #[starknet::contract]
-mod DAO {
+pub mod DAO {
     use super::{Proposal, ProposalStatus, Vote, IDAO};
     use starknet::ContractAddress;
     use starknet::get_caller_address;
