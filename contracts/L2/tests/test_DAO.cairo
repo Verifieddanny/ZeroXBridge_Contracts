@@ -198,7 +198,9 @@ fn test_tally_poll_votes_passed() {
     dao_dispatcher.vote_in_poll(1, true);
 
     // Ensure the poll is still active
-    cheat_block_timestamp(dao, 500, CheatSpan::TargetCalls(1)); // Simulate time within the poll duration
+    cheat_block_timestamp(
+        dao, 500, CheatSpan::TargetCalls(1),
+    ); // Simulate time within the poll duration
 
     // Tally votes
     dao_dispatcher.tally_poll_votes(1);
@@ -230,7 +232,9 @@ fn test_tally_poll_votes_defeated() {
     dao_dispatcher.vote_in_poll(1, false);
 
     // Ensure the poll is still active
-    cheat_block_timestamp(dao, 500, CheatSpan::TargetCalls(1)); // Simulate time within the poll duration
+    cheat_block_timestamp(
+        dao, 500, CheatSpan::TargetCalls(1),
+    ); // Simulate time within the poll duration
 
     // Tally votes
     dao_dispatcher.tally_poll_votes(1);
